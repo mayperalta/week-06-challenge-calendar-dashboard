@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Weather</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
+  </head>
+  <body>
+  <!-- nav bar -->
+  <nav class="navbar" role="navigation" aria-label="main navigation">
+      <h1 class="navtitle">Weather Dashboard</h1>
+  </nav>
+  <!-- end nav bar -->
+  <section class="section columns">
+  <div class="column is-one-third">
+    <!-- search a city -->
+    <article class="panel is-primary">
+      <h2 class="searchtitle">Search for a City:</h2>
+      <div class="panel-block">
+        <p class="control has-icons-left">
+          <input id="city" class="input is-primary" type="text" placeholder="Search">
+        </p>
+      </div>
+      <div class="panel-block">
+      <button id="search-city-btn" class="button is-fullwidth is-primary">Search</button>
+      </div>
+      <!-- searched cities -->
+      <a class="panel-block is-active">
+          <p id="past-city" class="fas fa-book" aria-hidden="true">bulma</p>
+      </a>
+      <a class="panel-block is-active">
+          <p id="searched-city" class="fas fa-book" aria-hidden="true">miami</p>
+      </a>
+    </article>
+  <!-- show dashboard -->
+  </div>
+  <!-- main weather container -->
+
+  <div id="city-weather" class="column is-two-third">
+    <!-- 
+    <div id="city-weather" class="column is-full">
+        <h2 id="current-city" class="subtitle is-3"></h2>
+        <p id="current-temp" class="subtitle is-5">Temp:</p>
+        <p id="current-wind" class="subtitle is-5">Wind:</p>
+        <p id="current-humidity" class="subtitle is-5">Humidity:</p>     
+    </div>
+  -->
+    <!-- 
+    <div class="column is-full">
+      <h2 class="subtitle is-3">5-Day Forecast:</h2>
+    </div>
+   -->
+    <div class="column is-full">
+      <div id="city-forecast" class="columns is-gap">
+        <div id="city-forecast-container" class="column forecast-container">
+            <p id ="future-date" class="subtitle is-6"></p>
+            <p id ="future-icon" class="subtitle is-6"></p>   
+            <p id ="future-temp" class="subtitle is-6">Temp:</p>
+            <p  id ="future-wind"class="subtitle is-6">Wind:</p>
+            <p id ="future-humidity" class="subtitle is-6">Humidity:</p>     
+        </div>
+       
+      </div>
+      
+ </div>
+    </div>
+      
+
+  </div>
+  
+
+  </section>
+  <script src='./assets/js/script.js'></script>
+  <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"
+    ></script>
+  </body>
+</html>

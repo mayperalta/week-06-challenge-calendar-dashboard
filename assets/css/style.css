@@ -1,0 +1,39 @@
+/* 
+   # 06 Server-Side APIs: Weather Dashboard
+   Displays the weather outlook for multiple cities. 
+   May Peralta
+*/
+
+.navbar {
+    display: flex;
+    justify-content: center;
+    background-color: #24b195;
+}
+
+.navtitle {
+    text-align: center;
+    color: #FFF;
+    font-size: 2em;
+    font-weight: 600;
+}
+
+.searchtitle {
+    font-size: 1.2em;
+    font-weight: 600;
+    padding-left: 5px;
+}
+
+.is-two-third {
+    border: 1px solid #000;
+}
+
+.forecast-container {
+    border: 5px solid #fff;
+    background-color: #24b195;
+}
+.forecast-container p {
+    color: #fff;
+}
+img{
+    width: 50px;
+}
