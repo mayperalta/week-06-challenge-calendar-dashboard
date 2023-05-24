@@ -29,8 +29,6 @@ searchBtn.on("click", function() {
 function searchHistory() {
     var recentSearch= [];
     recentSearch.push($('#city').val());
-    
-    
 }
 
 // get city, latitude, and longtitude
@@ -56,17 +54,13 @@ function getWeather(lat, lon, city) {
         .then( function(data) {
             console.log(data);
 
-            // get data and display city, date, and icon
-            // var cityName = document.createElement("span");
-            // cityName.textContent = city;
-            // var cityNameEl = document.getElementById("current-city").append(cityName);
-
+            // create city weather container
             var cityWeatherEl = document.createElement("div");
             cityWeatherEl.classList.add("column",  "is-full");
             cityWeatherEl.setAttribute("id", "forecast-container");
             document.getElementById("city-weather").append(cityWeatherEl);
 
-             // get data for city, date, and icon
+             // get data for city, date, and icon, temp, humidity, wind
             var cityName = document.createElement("h2");
             cityName.classList.add("subtitle", "is-3");
             cityName.textContent = city;
@@ -108,14 +102,24 @@ function getWeather(lat, lon, city) {
             forecastTitle.innerHTML =  "5-day Forecast: ";
             cityWeatherEl.appendChild(forecastTitle);
 
+            //create forecast container
+            var forecastEl  = document.createElement("div");
+            forecastEl.classList.add("column",  "is-full");
+            cityWeatherEl.append(forecastEl);
+
+             //create forecast container
+             var forecastSubEl  = document.createElement("div");
+             forecastSubEl.classList.add("columns",  "is-gap");
+             forecastEl.appendChild(forecastSubEl);
+
 
             // display 5-day forecast for icon, temp, wind, humidity
             for (var i=0; i <= 4; i++) {
 
-                // add city forecast container
+                // add city forecast sub container
                 var forecastContainer = document.createElement("div");
                 forecastContainer.classList.add("column", "forecast-container");
-                cityWeatherEl.append(forecastContainer);
+                forecastSubEl.append(forecastContainer);
                 //document.getElementById("city-forecast").append(forecastContainer);
 
                 // add city forecast elements
