@@ -16,6 +16,15 @@ SO THAT I can plan a trip accordingly
 
 A weather dashboard is presented on a page with a two-column design. The left column contains an input element allowing users to enter a city. If it exists, it will display the current city weather and 5-day forecasts on the right column, consisting of the city name, date, and an icon presenting the weather conditions, temperature, wind, and humidity. Listed below the search button is the city search history. Each city links to its current and 5-day forecast weather details. 
 
+## Technologies used
+
+This application is built utilizing the following:
+
+* HTML
+* CSS
+* JavaScript
+* API -  [https://openweathermap.org/api](https://openweathermap.org/api)
+
 ## Mock-up
 
 The video below demonstrates the functionality of the weather dashboard.
