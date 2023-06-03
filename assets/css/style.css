@@ -37,3 +37,12 @@
 img{
     width: 50px;
 }
+
+#searched-city {
+    display: flex;
+    flex-direction: column;
+}
+
+.searched-btn {
+    margin: 5px;
+}

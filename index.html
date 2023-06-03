@@ -28,18 +28,16 @@
           <div class="panel-block">
               <button id="search-city-btn" class="button is-fullwidth is-primary">Search</button>
           </div>
-          <!-- searched cities -->
-          <a class="panel-block is-active">
-              <p id="past-city" class="fas fa-book" aria-hidden="true">bulma</p>
-          </a>
-          <a class="panel-block is-active">
-              <p id="searched-city" class="fas fa-book" aria-hidden="true">miami</p>
-          </a>
+          <div class="city-history">
+                <a id="searched-city" class="panel-block is-active">
+                    <!-- <button id="searched-city" class="button is-fullwidth" aria-hidden="true"></button> --> 
+                </a>
+          </div>
         </article>
       </div>
       <!-- show dashboard -->
       <div id="city-weather" class="column is-two-third">
-        <h2 class="subtitle is-6">Show today's weather:</h2>
+        <h2 id = "today-weather" class="subtitle is-6">Show today's weather:</h2>
       </div>
   </section>
   <script src='./assets/js/script.js'></script>

@@ -14,21 +14,55 @@ var weatherApiKey = '22624c048bc9b7ce50325f546ff45499';
 var searchBtn = $('#search-city-btn');
 var pastCities = $('#searched-city');
 var currentCity; 
+var recentSearch = JSON.parse(localStorage.getItem("historyArray")) || []; // look into local storage for an array called historyArray leave as empty array if doesn't exist
 
 // function to get the lat and lon from API
 searchBtn.on("click", function() {
     var inputCity = $('#city').val();
-    const capitalizedCity =
+    var capitalizedCity =
     inputCity.charAt(0).toUpperCase()
         + inputCity.slice(1)
-
+    searchHistory(capitalizedCity);
     geoCode(capitalizedCity); 
 });
 
 // search history 
-function searchHistory() {
-    var recentSearch= [];
-    recentSearch.push($('#city').val());
+function searchHistory(city) {
+    if (recentSearch.includes(city)) {
+        return;
+    }
+
+    // var historyTab = document.getElementById("city-history");
+    var linkTabEl = document.getElementById("searched-city");
+    var historyTab = document.createElement("button");
+    historyTab.classList.add("button", "is-fullwidth", "panel-block", "searched-btn");
+
+    historyTab.textContent = city;
+    historyTab.setAttribute("value", city);
+    historyTab.addEventListener("click", function() {
+        geoCode(city);
+    })
+    // document.getElementById("searched-city").append(historyTab);
+    linkTabEl.appendChild(historyTab);
+}
+
+function renderHistory(city) {
+    // var historyTab = document.getElementById("city-history");
+    var linkTabEl = document.getElementById("searched-city");
+    var historyTab = document.createElement("button");
+    historyTab.classList.add("button", "is-fullwidth", "panel-block");
+
+    historyTab.textContent = city;
+    historyTab.setAttribute("value", city);
+    historyTab.addEventListener("click", function() {
+        geoCode(city);
+    })
+    //document.getElementById("searched-city").append(historyTab); // adds button below id searched-city
+    linkTabEl.appendChild(historyTab);
+}
+
+for(var i=0; i < recentSearch.length; i++) {
+    renderHistory(recentSearch[i]);
 }
 
 // get city, latitude, and longtitude
@@ -40,6 +74,9 @@ function geoCode(city) {
         })
         .then( function(data) {
             console.log(data);
+            
+            recentSearch.push(city); // takes the newest city that we searched for and pushes it to recent search array
+            localStorage.setItem("historyArray", JSON.stringify(recentSearch));  // rewrite history array in local storage to match the current state of recent search array
             getWeather(data[0].lat, data[0].lon, city)
         })
 }
@@ -53,6 +90,7 @@ function getWeather(lat, lon, city) {
         })
         .then( function(data) {
             console.log(data);
+            document.getElementById("city-weather").innerHTML = ""; 
 
             // create city weather container
             var cityWeatherEl = document.createElement("div");
@@ -114,7 +152,7 @@ function getWeather(lat, lon, city) {
 
 
             // display 5-day forecast for icon, temp, wind, humidity
-            for (var i=0; i <= 4; i++) {
+            for (var i=1; i <= 5; i++) {
 
                 // add city forecast sub container
                 var forecastContainer = document.createElement("div");
