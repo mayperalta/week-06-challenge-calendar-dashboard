@@ -18,5 +18,14 @@ A weather dashboard is presented on a page with a two-column design. The left co
 
 ## Mock-up
 
+The video below demonstrates the functionality of the weather dashboard.
+
+![Watch video](./assets/image/weather-demo.gif)
+
+## Requirements
+
+Below are the requirements for this challenge. 
+
+
 
 
