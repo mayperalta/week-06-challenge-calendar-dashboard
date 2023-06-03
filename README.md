@@ -36,7 +36,7 @@ The video below demonstrates the functionality of the weather dashboard.
 Below are the requirements for this challenge. 
 
 * URL of the deployed application:
-[https://mayperalta.github.io/week-06-challenge-calendar-dashboard/week-06-challenge-calendar-dashboard/](https://mayperalta.github.io/week-06-challenge-calendar-dashboard/week-06-challenge-calendar-dashboard/)
+[https://mayperalta.github.io/week-06-challenge-calendar-dashboard/](https://mayperalta.github.io/week-06-challenge-calendar-dashboard)
 
 * URL of the GitHub Repositiory:
 [https://github.com/mayperalta/week-06-weather-dashboard](https://github.com/mayperalta/week-06-weather-dashboard)
