@@ -2,7 +2,7 @@
 
 ## Description
 
-The challenge is to build a weather dashboard that displays the current and 5-day forecast weather of a city searched by the user. The weather data is generated from an open weather API - `https://api.openweathermap.org/data/2.5/forecast?lat={lat}&lon={lon}&appid={API key}`.
+The challenge is to build a weather dashboard that displays the current and 5-day forecast weather of a city searched by the user. 
 
 ## User Story
 
