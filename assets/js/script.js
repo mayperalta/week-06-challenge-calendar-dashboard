@@ -67,7 +67,7 @@ for(var i=0; i < recentSearch.length; i++) {
 
 // get city, latitude, and longtitude
 function geoCode(city) {
-    var requestUrl = `http://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=5&appid=${weatherApiKey}`; 
+    var requestUrl = `https://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=5&appid=${weatherApiKey}`; 
     fetch(requestUrl)
         .then(function(response) {
             return response.json();
@@ -83,7 +83,7 @@ function geoCode(city) {
 
 // access object elements in JSON and display on page
 function getWeather(lat, lon, city) {
-    var requestUrl = `http://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude=minutely,hourly,alerts&units=imperial&appid=${weatherApiKey}`
+    var requestUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude=minutely,hourly,alerts&units=imperial&appid=${weatherApiKey}`
     fetch(requestUrl)
         .then(function(response) {
             return response.json();
@@ -108,7 +108,7 @@ function getWeather(lat, lon, city) {
             date.textContent = " (" + getToday.unix(data.current.dt).format("MM/DD/YY") + ") ";
 
             var icon = document.createElement("img");
-            icon.setAttribute("src",`http://openweathermap.org/img/wn/${data.current.weather[0].icon}@2x.png`)
+            icon.setAttribute("src",`https://openweathermap.org/img/wn/${data.current.weather[0].icon}@2x.png`)
 
             var temp = document.createElement("p");
             temp.classList.add("subtitle", "is-5");
@@ -167,7 +167,7 @@ function getWeather(lat, lon, city) {
                 forecastContainer.appendChild(futureDate);
 
                 var futureIcon = document.createElement("img");
-                futureIcon.setAttribute("src",`http://openweathermap.org/img/wn/${data.daily[i].weather[0].icon}@2x.png`)
+                futureIcon.setAttribute("src",`https://openweathermap.org/img/wn/${data.daily[i].weather[0].icon}@2x.png`)
                 forecastContainer.append(futureIcon);
 
                 var futureTemp = document.createElement("p");
