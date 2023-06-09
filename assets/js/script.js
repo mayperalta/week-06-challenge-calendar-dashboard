@@ -19,7 +19,7 @@ var recentSearch = JSON.parse(localStorage.getItem("historyArray")) || []; // lo
 // function to get the lat and lon from API
 searchBtn.on("click", function() {
     var inputCity = $('#city').val();
-    var capitalizedCity =
+    const capitalizedCity =
     inputCity.charAt(0).toUpperCase()
         + inputCity.slice(1)
     searchHistory(capitalizedCity);
@@ -152,7 +152,7 @@ function getWeather(lat, lon, city) {
 
 
             // display 5-day forecast for icon, temp, wind, humidity
-            for (var i=1; i <= 5; i++) {
+            for (var i=0; i <= 4; i++) {
 
                 // add city forecast sub container
                 var forecastContainer = document.createElement("div");
@@ -188,6 +188,7 @@ function getWeather(lat, lon, city) {
             }
         })
     }
+
 
   
 
