@@ -67,7 +67,7 @@ for(var i=0; i < recentSearch.length; i++) {
 
 // get city, latitude, and longtitude
 function geoCode(city) {
-    var requestUrl = `http://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=5&appid=${weatherApiKey}`; 
+    var requestUrl = `https://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=5&appid=${weatherApiKey}`; 
     fetch(requestUrl)
         .then(function(response) {
             return response.json();
