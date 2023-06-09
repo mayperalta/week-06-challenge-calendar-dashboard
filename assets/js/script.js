@@ -189,7 +189,6 @@ function getWeather(lat, lon, city) {
         })
     }
 
-
   
 
 
